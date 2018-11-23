@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <classPathEntry
+            location="C:\Users\LexTeng\.m2\repository\mysql\mysql-connector-java\5.1.21\mysql-connector-java-5.1.21.jar"></classPathEntry>
+    <context id="Mysql" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+        <property name="javaFileEncoding" value="UTF-8"/>
+        <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+            <property name="mappers" value="com.cn.api.util.MyMapper"/>
+        </plugin>
+
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/api"
+                        userId="root"
+                        password="root">
+        </jdbcConnection>
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+        <javaModelGenerator targetPackage="com.cn.api.entity" targetProject="E:\Work\api\src\main\java">
+            <property name="rootClass" value="com.cn.api.entity.BaseEntity"></property>
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="mapper" targetProject="E:\Work\api\src\main\resources"/>
+
+        <javaClientGenerator targetPackage="com.cn.api.mapper" targetProject="E:\Work\api\src\main\java"
+                             type="XMLMAPPER">
+        </javaClientGenerator>
+
+        <!--新增的表建议单独置定，否则会覆盖，或者设置输出路径到外部路径不覆盖源码-->
+        <!--        <table tableName="tcunit" domainObjectName="Unit">
+                    &lt;!&ndash;mysql 配置&ndash;&gt;
+                    &lt;!&ndash; <generatedKey column="id" sqlStatement="Mysql" identity="true"/>&ndash;&gt;
+                    <generatedKey column="unitid" sqlStatement="select SEQ_{1}.nextval from dual" identity="false" type="pre"/>
+                </table>
+                <table tableName="tchuman" domainObjectName="Human">
+                    <generatedKey column="humanid" sqlStatement="select SEQ_{1}.nextval from dual" identity="false" type="pre"/>
+                </table>
+                <table tableName="tcrole" domainObjectName="Role">
+                    <generatedKey column="roleid" sqlStatement="select SEQ_{1}.nextval from dual" identity="false" type="pre"/>
+                </table>
+                <table tableName="tchumanrole" domainObjectName="HumanRole">
+                </table>
+                <table tableName="tcresource" domainObjectName="Resource">
+                    <generatedKey column="resourceid" sqlStatement="select SEQ_{1}.nextval from dual" identity="false"
+                                  type="pre"/>
+                </table>
+                <table tableName="tctenant" domainObjectName="Tenant">
+                    <generatedKey column="tenantid" sqlStatement="select SEQ_{1}.nextval from dual" identity="false"
+                                  type="pre"/>
+                </table>
+                <table tableName="tcroleresource" domainObjectName="ResourceRole">
+                </table>
+                <table tableName="tcCantonTemplate" domainObjectName="CantonTemplate">
+                    <generatedKey column="CantonCode" sqlStatement="select SEQ_{1}.nextval from dual" identity="false" type="pre"/>
+                </table>
+                <table tableName="tcCanton" domainObjectName="Canton">
+                    <generatedKey column="CantonID" sqlStatement="select SEQ_{1}.nextval from dual" identity="false" type="pre"/>
+                </table>
+                <table tableName="tcDuty" domainObjectName="Duty">
+                    <generatedKey column="DutyID" sqlStatement="select SEQ_{1}.nextval from dual" identity="false" type="pre"/>
+                </table>
+                <table tableName="tcHumanTenant" domainObjectName="HumanTenant">
+                </table>
+                <table tableName="tcDicTenantType" domainObjectName="TenantType">
+                    <generatedKey column="id" sqlStatement="select SEQ_{1}.nextval from dual" identity="false" type="pre"/>
+                </table>
+                <table tableName="tcDicResourceType" domainObjectName="ResourceType">
+                    <generatedKey column="id" sqlStatement="select SEQ_{1}.nextval from dual" identity="false" type="pre"/>
+                </table>
+                <table tableName="tcSysNavMenu" domainObjectName="SysNavMenu">
+                    <generatedKey column="MenuID" sqlStatement="select SEQ_{1}.nextval from dual" identity="false" type="pre"/>
+                </table>
+                <table tableName="tcApproval" domainObjectName="Approval">
+                    <generatedKey column="id" sqlStatement="select SEQ_{1}.nextval from dual" identity="false" type="pre"/>
+                </table>
+                <table tableName="tcApp" domainObjectName="App">
+                    <generatedKey column="APPID" sqlStatement="select SEQ_{1}.nextval from dual" identity="false" type="pre"/>
+                </table>
+                <table tableName="tcAppResource" domainObjectName="AppResource">
+                </table>
+                <table tableName="tcAppTenant" domainObjectName="AppTenant">
+                </table>
+                <table tableName="tcSysOpLog" domainObjectName="SysOpLog">
+                    <generatedKey column="LogID" sqlStatement="select SEQ_{1}.nextval from dual" identity="false" type="pre"/>
+                </table>-->
+        <!-- <table tableName="tcBiz" domainObjectName="Biz">
+             <generatedKey column="bizId" sqlStatement="select SEQ_{1}.nextval from dual" identity="false" type="pre"/>
+         </table>-->
+        <!--  <table tableName="TOWFACTINST" domainObjectName="WFActInst">
+              <generatedKey column="ACTID" sqlStatement="select SEQ_{1}.nextval from dual" identity="false" type="pre"/>
+          </table>-->
+        <!-- <table tableName="ACT_RU_TASK" domainObjectName="ACT_RU_TASK">
+             <generatedKey column="ID_" sqlStatement="select SEQ_{1}.nextval from dual" identity="false" type="pre"/>
+         </table>-->
+
+        <!-- <table tableName="tcWFProcDef" domainObjectName="WFProcDef">
+             <generatedKey column="ProcDefID" sqlStatement="select max(ProcDefID) from dlsys.{1}" identity="false" type="pre"/>
+         </table>-->
+        <table tableName="person" domainObjectName="Person">
+        </table>
+        <!-- <table tableName="ACT_WF_TASKDEFKEY_ACTDEF_REL" domainObjectName="ACTWFTaskKeyActDefRel">
+         </table>-->
+        <!-- <table tableName="tcWFActDef" domainObjectName="WFActDef">
+             <generatedKey column="ACTDEFID" sqlStatement="select max(ACTDEFID) from dlsys.{1}" identity="false" type="pre"/>
+         </table>-->
+    </context>
+</generatorConfiguration>

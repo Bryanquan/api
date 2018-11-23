@@ -1,0 +1,48 @@
+server:
+    httpPort: 8888
+    port: 8442
+    context-path: /api
+    session:
+      timeout: -1
+    tomcat:
+      uri-encoding: utf-8
+    compression:
+      enabled: true
+spring:
+    jackson:
+      date-format: yyyy-MM-dd HH:mm:ss
+      time-zone: GMT+8
+    datasource:
+        #业务数据源,支持hakari连接池
+        api:
+            jdbcUrl: jdbc:mysql://localhost:3306/api
+            driverClassName: com.mysql.jdbc.Driver
+            username: root
+            password: root
+        hikari:
+            cachePrepStmts: true
+            prepStmtCacheSize: 250
+            prepStmtCacheSqlLimit: 2048
+            useServerPrepStmts: true
+            auto-commit: true
+            maximum-pool-size: 15
+    jpa:
+      properties:
+        hibernate:
+          hbm2ddl:
+            auto: none
+      show-sql: true
+    resources:
+      static-locations: classpath:/META-INF/resources/,classpath:/resources/, classpath:/static/,classpath:/public/,file:${app.upload-path}
+mybatis:
+  type-aliases-package: com.cn.api.entity
+  mapper-locations: classpath:mapper/*.xml
+  type-handlers-package: com.cn.api.handlers
+mapper:
+  mappers: com.cn.api.util.MyMapper
+  ORDER: BEFORE
+  not-empty: false
+  identity: MYSQL
+
+
+
