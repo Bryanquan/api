@@ -4,6 +4,7 @@ package com.cn.api.util;
 import com.cn.api.enums.ResultCode;
 import dto.ResultDto;
 
+
 public class ResultUtils {
     public static ResultDto success(Object data) {
         return new ResultDto(ResultCode.SUCCESS, data);
