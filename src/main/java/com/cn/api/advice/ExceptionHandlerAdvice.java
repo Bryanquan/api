@@ -20,8 +20,6 @@ import javax.validation.ConstraintViolationException;
 /**
  * 异常统一处理，业务逻辑统一包装成BizServiceException，这里会将具体的错误信息反馈给前端
  *
- * @author gongxufan
- * @date 17-12-15
  **/
 @ControllerAdvice
 @ResponseBody
