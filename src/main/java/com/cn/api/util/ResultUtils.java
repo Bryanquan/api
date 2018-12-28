@@ -4,12 +4,6 @@ package com.cn.api.util;
 import com.cn.api.enums.ResultCode;
 import dto.ResultDto;
 
-/**
- * 返回业务数据，如果出现异常则携带相应的信息
- *
- * @author gongxufan
- * @date 17-12-15
- **/
 public class ResultUtils {
     public static ResultDto success(Object data) {
         return new ResultDto(ResultCode.SUCCESS, data);
