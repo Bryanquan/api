@@ -25,7 +25,7 @@ import java.util.Map;
 public class FdfsClient {
     private static Logger logger = LoggerFactory.getLogger(FdfsClient.class);
 
-    private static String FASTDFS_CONFIG_PATH = "fdfs-config.properties";
+    private static String FASTDFS_CONFIG_PATH = "api-config.properties";
 
     public  static final Map<String, String> EXT_MAP = new HashMap<>();
 
@@ -36,7 +36,7 @@ public class FdfsClient {
     static {
         try {
             PropertiesUtils.setConfigPath(FASTDFS_CONFIG_PATH);
-            String httpUrl =  PropertiesUtils.getConfigValue("file_server_addr");
+            String httpUrl =  PropertiesUtils.getConfigValue("fdfs_server_addr");
             int endIndex = httpUrl.indexOf(":");
             httpPrefix = httpUrl.substring(0,endIndex);
         } catch (IOException e) {

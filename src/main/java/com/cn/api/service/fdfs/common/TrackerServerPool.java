@@ -19,9 +19,9 @@ public class TrackerServerPool {
 
     private static Logger logger = LoggerFactory.getLogger(TrackerServerPool.class);
 
-    private static String FASTDFS_CONFIG_PATH = "fdfs-config.properties";
+    private static String FASTDFS_CONFIG_PATH = "api-config.properties";
 
-    private static String maxStorageConnection = "max_storage_connection";
+    private static String maxStorageConnection = "fdfs_max_storage_connection";
 
     private static GenericObjectPool<TrackerServer> trackerServerPool;
 
