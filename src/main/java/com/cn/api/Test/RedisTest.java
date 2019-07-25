@@ -10,7 +10,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 public class RedisTest {
     public static final Log logger = LogFactory.getLog(RedisTest.class);
     public static final Jedis redisClient = new Jedis("localhost");

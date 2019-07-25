@@ -46,7 +46,6 @@ public class FdfsApi {
     @ResponseBody
     @ApiOperation(value = "文件下载", notes = "文件下载")
     public ResultDto download(String fileUrl, HttpServletResponse response) throws IOException {
-
         String filename = "";
         FileResponseDto fileResponseDto = apiClient.download(fileUrl, response, filename);
         return ResultUtils.success(fileResponseDto);

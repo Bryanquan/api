@@ -262,6 +262,11 @@
                 <artifactId>jedis</artifactId>
                 <version>3.0.1</version>
             </dependency>
+            <dependency>
+                <groupId>org.aspectj</groupId>
+                <artifactId>aspectjrt</artifactId>
+                <version>1.8.13</version>
+            </dependency>
         </dependencies>
     <build>
         <plugins>
