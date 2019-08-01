@@ -21,7 +21,7 @@ public class SwaggerConfig {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.cn.api.resource"))
+                .apis(RequestHandlerSelectors.basePackage("com.cn.api"))
                 .apis(RequestHandlerSelectors.withMethodAnnotation(ResponseBody.class))
                 .paths(PathSelectors.any())
                 .build();
