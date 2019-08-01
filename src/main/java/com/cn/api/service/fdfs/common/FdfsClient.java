@@ -36,7 +36,7 @@ public class FdfsClient {
     static {
         try {
             PropertiesUtils.setConfigPath(FASTDFS_CONFIG_PATH);
-            String httpUrl =  PropertiesUtils.getConfigValue("fdfs_server_addr");
+            String httpUrl =  PropertiesUtils.getConfigValue("fdfs_file_server_addr");
             int endIndex = httpUrl.indexOf(":");
             httpPrefix = httpUrl.substring(0,endIndex);
         } catch (IOException e) {
