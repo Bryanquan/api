@@ -13,6 +13,7 @@ import org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletCon
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import tk.mybatis.spring.annotation.MapperScan;
 
@@ -20,6 +21,7 @@ import tk.mybatis.spring.annotation.MapperScan;
 @EnableTransactionManagement
 @MapperScan(basePackages = "com.cn.api.mapper")
 @EnableCaching
+@EnableScheduling
 @ServletComponentScan
 public class ApplicationStarter implements CommandLineRunner {
     @Value("${server.httpPort}")
